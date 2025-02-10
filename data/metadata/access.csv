@@ -1,0 +1,3 @@
+fileName,name,contentUrl,encodingFormat
+undpcomposite.csv,undpcomposite,https://raw.githubusercontent.com/openwashdata/undpcomposite/main/inst/extdata/undpcomposite.csv,csv
+undpcomposite.xlsx,undpcomposite,https://raw.githubusercontent.com/openwashdata/undpcomposite/main/inst/extdata/undpcomposite.xlsx,ooxml

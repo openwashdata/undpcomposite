@@ -1,0 +1,2 @@
+title,description,datePublished,citation,keywords,license,funder,geographicDescription,northBoundCoord,eastBoundCoord,southBoundCoord,westBoundCoord,wktString,startDate,endDate
+UNDP Composite Indicators Timeseries,Provides tidy data about all UNDP indicators in a composite timeseries.,10.02.2025,NA,"undp, hdi, composite indicators",CC BY 4.0,https://ethrat.ch/en/eth-domain/open-research-data/,global,NA,NA,NA,NA,NA,1990,2022
