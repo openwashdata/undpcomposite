@@ -1,0 +1,46 @@
+directory,file_name,variable_name,variable_type,description
+data/,undpcomposite.rda,iso3,character,ISO3 country code
+data/,undpcomposite.rda,country,character,Country name
+data/,undpcomposite.rda,hdicode,character,Human Development Group
+data/,undpcomposite.rda,region,character,UNDP Developin Regions
+data/,undpcomposite.rda,hdi_rank_2022,numeric,HDI Rank in 2022
+data/,undpcomposite.rda,year,character,Year of value
+data/,undpcomposite.rda,hdi,numeric,Human Development Index
+data/,undpcomposite.rda,le,numeric,Life Expectancy at Birth (years)
+data/,undpcomposite.rda,eys,numeric,Expected Years of Schooling (years)
+data/,undpcomposite.rda,mys,numeric,Mean Years of Schooling (years)
+data/,undpcomposite.rda,gnipc,numeric,Gross National Income Per Capita (2017 PPP$)
+data/,undpcomposite.rda,gdi_group,numeric,GDI Group
+data/,undpcomposite.rda,gdi,numeric,Gender Development Index (value)
+data/,undpcomposite.rda,hdi_f,numeric,HDI female
+data/,undpcomposite.rda,le_f,numeric,"Life Expectancy at Birth, female (years)"
+data/,undpcomposite.rda,eys_f,numeric,"Expected Years of Schooling, female (years)"
+data/,undpcomposite.rda,mys_f,numeric,"Mean Years of Schooling, female (years)"
+data/,undpcomposite.rda,gni_pc_f,numeric,"Gross National Income Per Capita, female (2017 PPP$)"
+data/,undpcomposite.rda,hdi_m,numeric,HDI male
+data/,undpcomposite.rda,le_m,numeric,"Life Expectancy at Birth, male (years)"
+data/,undpcomposite.rda,eys_m,numeric,"Expected Years of Schooling, male (years)"
+data/,undpcomposite.rda,mys_m,numeric,"Mean Years of Schooling, male (years)"
+data/,undpcomposite.rda,gni_pc_m,numeric,"Gross National Income Per Capita, male (2017 PPP$)"
+data/,undpcomposite.rda,ihdi,numeric,Inequality-adjusted Human Development Index (value)
+data/,undpcomposite.rda,coef_ineq,numeric,Coefficient of human inequality
+data/,undpcomposite.rda,loss,numeric,Overall loss (%)
+data/,undpcomposite.rda,ineq_le,numeric,Inequality in life expectancy
+data/,undpcomposite.rda,ineq_edu,numeric,Inequality in eduation
+data/,undpcomposite.rda,ineq_inc,numeric,Inequality in income
+data/,undpcomposite.rda,gii_rank,numeric,GII Rank
+data/,undpcomposite.rda,gii,numeric,Gender Inequality Index (value)
+data/,undpcomposite.rda,mmr,numeric,"Maternal Mortality Ratio (deaths per 100,000 live births)"
+data/,undpcomposite.rda,abr,numeric,"Adolescent Birth Rate (births per 1,000 women ages 15-19)"
+data/,undpcomposite.rda,se_f,numeric,"Population with at least some secondary education, female (% ages 25 and older)"
+data/,undpcomposite.rda,se_m,numeric,"Population with at least some secondary education, male (% ages 25 and older)"
+data/,undpcomposite.rda,pr_f,numeric,"Share of seats in parliament, female (% held by women)"
+data/,undpcomposite.rda,pr_m,numeric,"Share of seats in parliament, male (% held by men)"
+data/,undpcomposite.rda,lfpr_f,numeric,"Labour force participation rate, female (% ages 15 and older)"
+data/,undpcomposite.rda,lfpr_m,numeric,"Labour force participation rate, male (% ages 15 and older)"
+data/,undpcomposite.rda,rankdiff_hdi_phdi,numeric,Difference from HDI rank
+data/,undpcomposite.rda,phdi,numeric,Planetary pressures–adjusted Human Development Index (value)
+data/,undpcomposite.rda,diff_hdi_phdi,numeric,Difference from HDI value (%)
+data/,undpcomposite.rda,co2_prod,numeric,Carbon dioxide emissions per capita (production) (tonnes)
+data/,undpcomposite.rda,mf,numeric,Material footprint per capita (tonnes)
+data/,undpcomposite.rda,pop_total,numeric,"Population, total (millions)"
