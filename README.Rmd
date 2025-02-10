@@ -1,0 +1,173 @@
+---
+output: github_document
+always_allow_html: true
+editor_options: 
+  markdown: 
+    wrap: 72
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  message = FALSE,
+  warning = FALSE,
+  fig.retina = 2,
+  fig.align = 'center'
+)
+```
+
+# undpcomposite
+
+<!-- badges: start -->
+
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+<!-- badges: end -->
+
+The goal of undpcomposite is to provide tidy data from the UNDP composite data timeseries
+
+## Installation
+
+You can install the development version of undpcomposite from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openwashdata/undpcomposite")
+```
+
+```{r}
+## Run the following code in console if you don't have the packages
+## install.packages(c("dplyr", "knitr", "readr", "stringr", "gt", "kableExtra"))
+library(dplyr)
+library(knitr)
+library(readr)
+library(stringr)
+library(gt)
+library(kableExtra)
+```
+
+Alternatively, you can download the individual datasets as a CSV or XLSX
+file from the table below.
+
+1.  Click Download CSV. A window opens that displays the CSV in
+    your browser.
+2.  Right-click anywhere inside the window and select "Save Page As...".
+3.  Save the file in a folder of your choice.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+extdata_path <- "https://github.com/openwashdata/undpcomposite/raw/main/inst/extdata/"
+
+read_csv("data-raw/dictionary.csv") |> 
+  distinct(file_name) |> 
+  dplyr::mutate(file_name = str_remove(file_name, ".rda")) |> 
+  dplyr::rename(dataset = file_name) |> 
+  mutate(
+    CSV = paste0("[Download CSV](", extdata_path, dataset, ".csv)"),
+    XLSX = paste0("[Download XLSX](", extdata_path, dataset, ".xlsx)")
+  ) |> 
+  knitr::kable()
+
+```
+
+## Data
+
+The package provides access to ...
+
+```{r}
+library(undpcomposite)
+```
+
+### undpcomposite
+
+The dataset `undpcomposite` contains data about UNDP indicators over time. It has
+`r nrow(undpcomposite)` observations and `r ncol(undpcomposite)`
+variables
+
+```{r}
+undpcomposite |> 
+  head(3) |> 
+  gt::gt() |>
+  gt::as_raw_html()
+```
+
+For an overview of the variable names, see the following table.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# Read CSV with explicit encoding conversion
+dictionary <- read_csv("data-raw/dictionary.csv", show_col_types = FALSE) |>
+  mutate(across(where(is.character), ~ iconv(.,"UTF-8","UTF-8",sub="")))
+
+# Filter and display table
+dictionary |>
+  filter(file_name == "undpcomposite.rda") |>
+  select(variable_name:description) |> 
+  # Limit to 5
+  head(5) |>
+  kable() |> 
+  kable_styling("striped") |> 
+  scroll_box(height = "200px")
+
+```
+
+## Example
+
+```{r}
+library(undpcomposite)
+library(ggplot2)
+library(dplyr)
+
+# Ensure UTF-8 encoding for character columns
+undpcomposite <- undpcomposite |>
+  mutate(across(where(is.character), ~ iconv(.,"UTF-8","UTF-8",sub="")))
+
+# Handle missing values in `abr`
+undpcomposite_clean <- undpcomposite |> 
+  filter(country %in% c("United States", "Germany", "Niger", "Mali")) |> 
+  mutate(
+    year = as.numeric(year),  # Convert year to numeric
+    abr = ifelse(is.na(abr), 0, abr)  # Replace NA values in abr
+  )
+
+# Find min and max year
+year_range <- range(undpcomposite_clean$year, na.rm = TRUE)
+
+# Create the plot with decade-based x-axis
+ggplot(undpcomposite_clean, aes(x = year, y = abr, color = country, group = country)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(floor(year_range[1] / 10) * 10, ceiling(year_range[2] / 10) * 10, by = 10)) +  
+  labs(
+    title = "Adolescent Birth Rate in Two High Income and Two Low Income Countries",
+    x = "Year",
+    y = "Adolescent Birth Rate (births per 1,000 women aged 15-29)"
+  ) +
+  theme_minimal()
+
+
+```
+
+## License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/%7B%7B%7Bpackagename%7D%7D%7D/blob/main/LICENSE.md).
+
+## Citation
+
+Please cite this package using:
+
+```{r}
+citation("undpcomposite")
+```

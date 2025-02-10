@@ -1,19 +1,19 @@
 Package: undpcomposite
 Type: Package
-Title: What the Package Does (Title Case)
+Title: UNDP Composite Indicators Timeseries
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
-    )
+Authors@R: c(person("Yash", "Dubey", , "ydubey@ethz.ch", role = c("aut","cre"),
+           comment = c(ORCID = "0009-0001-2849-970X"))
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: Provides tidy data about all UNDP indicators in a composite timeseries.
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 3.5)
 RoxygenNote: 7.3.2
+Language: en-GB
+Config/Needs/website: rmarkdown
+Date: 2025-02-10
+URL: https://github.com/openwashdata/undpcomposite
+BugReports: https://github.com/openwashdata/undpcomposite/issues
