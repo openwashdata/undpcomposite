@@ -81,7 +81,7 @@ read_csv("data-raw/dictionary.csv") |>
 
 ## Data
 
-The package provides access to ...
+The package provides access to composite data from UNDP on all indices in the form of a timeseries.
 
 ```{r}
 library(undpcomposite)
@@ -116,8 +116,6 @@ dictionary <- read_csv("data-raw/dictionary.csv", show_col_types = FALSE) |>
 dictionary |>
   filter(file_name == "undpcomposite.rda") |>
   select(variable_name:description) |> 
-  # Limit to 5
-  head(5) |>
   kable() |> 
   kable_styling("striped") |> 
   scroll_box(height = "200px")
@@ -125,6 +123,8 @@ dictionary |>
 ```
 
 ## Example
+
+Less developed countries exhibit higher adolescent birth rates than more developed countries
 
 ```{r}
 library(undpcomposite)

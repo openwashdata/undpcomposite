@@ -49,7 +49,8 @@ file from the table below.
 
 ## Data
 
-The package provides access to …
+The package provides access to composite data from UNDP on all indices
+in the form of a timeseries.
 
 ``` r
 library(undpcomposite)
@@ -67,7 +68,7 @@ undpcomposite |>
   gt::as_raw_html()
 ```
 
-<div id="krptrmpjeo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xmxglzcezl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   &#10;  <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead style="border-style: none;">
     <tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -385,6 +386,768 @@ HDI Rank in 2022
 
 </tr>
 
+<tr>
+
+<td style="text-align:left;">
+
+year
+</td>
+
+<td style="text-align:left;">
+
+character
+</td>
+
+<td style="text-align:left;">
+
+Year of value
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+hdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Human Development Index
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+le
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Life Expectancy at Birth (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+eys
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Expected Years of Schooling (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mys
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Mean Years of Schooling (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gnipc
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Gross National Income Per Capita (2017 PPP USD)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gdi_group
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+GDI Group
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Gender Development Index (value)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+hdi_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+HDI female
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+le_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Life Expectancy at Birth, female (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+eys_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Expected Years of Schooling, female (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mys_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Mean Years of Schooling, female (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gni_pc_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Gross National Income Per Capita, female (2017 PPP USD)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+hdi_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+HDI male
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+le_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Life Expectancy at Birth, male (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+eys_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Expected Years of Schooling, male (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mys_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Mean Years of Schooling, male (years)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gni_pc_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Gross National Income Per Capita, male (2017 PPP USD)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+ihdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Inequality-adjusted Human Development Index (value)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+coef_ineq
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Coefficient of human inequality
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+loss
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Overall loss (%)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+ineq_le
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Inequality in life expectancy
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+ineq_edu
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Inequality in eduation
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+ineq_inc
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Inequality in income
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gii_rank
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+GII Rank
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+gii
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Gender Inequality Index (value)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mmr
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Maternal Mortality Ratio (deaths per 100,000 live births)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+abr
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Adolescent Birth Rate (births per 1,000 women ages 15-19)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+se_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Population with at least some secondary education, female (% ages 25 and
+older)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+se_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Population with at least some secondary education, male (% ages 25 and
+older)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+pr_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Share of seats in parliament, female (% held by women)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+pr_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Share of seats in parliament, male (% held by men)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+lfpr_f
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Labour force participation rate, female (% ages 15 and older)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+lfpr_m
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Labour force participation rate, male (% ages 15 and older)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+rankdiff_hdi_phdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Difference from HDI rank
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+phdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Planetary pressuresadjusted Human Development Index (value)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+diff_hdi_phdi
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Difference from HDI value (%)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+co2_prod
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Carbon dioxide emissions per capita (production) (tonnes)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mf
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Material footprint per capita (tonnes)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+pop_total
+</td>
+
+<td style="text-align:left;">
+
+numeric
+</td>
+
+<td style="text-align:left;">
+
+Population, total (millions)
+</td>
+
+</tr>
+
 </tbody>
 
 </table>
@@ -392,6 +1155,9 @@ HDI Rank in 2022
 </div>
 
 ## Example
+
+Less developed countries exhibit higher adolescent birth rates than more
+developed countries
 
 ``` r
 library(undpcomposite)
