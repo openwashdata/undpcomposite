@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14845848.svg)](https://zenodo.org/doi/10.5281/zenodo.14845848)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14845847.svg)](https://zenodo.org/doi/10.5281/zenodo.14845847)
 [![R-CMD-check](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -135,13 +135,13 @@ library(dplyr)
 undpcomposite <- undpcomposite |>
   mutate(across(where(is.character), ~ iconv(.,"UTF-8","UTF-8",sub="")))
 
-# Handle missing values in `abr`
+# Keep four countries and the years with a value for `abr`
 undpcomposite_clean <- undpcomposite |> 
   filter(country %in% c("United States", "Germany", "Niger", "Mali")) |> 
   mutate(
-    year = as.numeric(year),  # Convert year to numeric
-    abr = ifelse(is.na(abr), 0, abr)  # Replace NA values in abr
-  )
+    year = as.numeric(year)  # Convert year to numeric
+  ) |> 
+  filter(!is.na(abr))  # Drop years without a value for abr
 
 # Find min and max year
 year_range <- range(undpcomposite_clean$year, na.rm = TRUE)
@@ -153,7 +153,7 @@ ggplot(undpcomposite_clean, aes(x = year, y = abr, color = country, group = coun
   labs(
     title = "Adolescent Birth Rate in Two High Income and Two Low Income Countries",
     x = "Year",
-    y = "Adolescent Birth Rate (births per 1,000 women aged 15-29)"
+    y = "Adolescent Birth Rate (births per 1,000 women aged 15-19)"
   ) +
   theme_minimal()
 
@@ -163,7 +163,7 @@ ggplot(undpcomposite_clean, aes(x = year, y = abr, color = country, group = coun
 ## License
 
 Data are available as
-[CC-BY](https://github.com/openwashdata/%7B%7B%7Bpackagename%7D%7D%7D/blob/main/LICENSE.md).
+[CC-BY](https://github.com/openwashdata/undpcomposite/blob/main/LICENSE.md).
 
 ## Citation
 
