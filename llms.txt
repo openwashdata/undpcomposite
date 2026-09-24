@@ -1,0 +1,200 @@
+# undpcomposite
+
+The goal of undpcomposite is to provide tidy data from the UNDP
+composite data timeseries
+
+## Installation
+
+You can install the development version of undpcomposite from
+[GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("devtools")
+devtools::install_github("openwashdata/undpcomposite")
+```
+
+``` r
+
+## Run the following code in console if you don't have the packages
+## install.packages(c("dplyr", "knitr", "readr", "stringr", "gt", "kableExtra"))
+library(dplyr)
+library(knitr)
+library(readr)
+library(stringr)
+library(gt)
+library(kableExtra)
+```
+
+Alternatively, you can download the individual datasets as a CSV or XLSX
+file from the table below.
+
+1.  Click Download CSV. A window opens that displays the CSV in your
+    browser.
+2.  Right-click anywhere inside the window and select “Save Page As…”.
+3.  Save the file in a folder of your choice.
+
+| dataset | CSV | XLSX |
+|:---|:---|:---|
+| undpcomposite | [Download CSV](https://github.com/openwashdata/undpcomposite/raw/main/inst/extdata/undpcomposite.csv) | [Download XLSX](https://github.com/openwashdata/undpcomposite/raw/main/inst/extdata/undpcomposite.xlsx) |
+
+## Data
+
+The package provides access to composite data from UNDP on all indices
+in the form of a timeseries.
+
+``` r
+
+library(undpcomposite)
+```
+
+### undpcomposite
+
+The dataset `undpcomposite` contains data about UNDP indicators over
+time. It has 6798 observations and 45 variables
+
+``` r
+
+undpcomposite |> 
+  head(3) |> 
+  gt::gt() |>
+  gt::as_raw_html()
+```
+
+| iso3 | country | hdicode | region | hdi_rank_2022 | year | hdi | le | eys | mys | gnipc | gdi_group | gdi | hdi_f | le_f | eys_f | mys_f | gni_pc_f | hdi_m | le_m | eys_m | mys_m | gni_pc_m | ihdi | coef_ineq | loss | ineq_le | ineq_edu | ineq_inc | gii_rank | gii | mmr | abr | se_f | se_m | pr_f | pr_m | lfpr_f | lfpr_m | rankdiff_hdi_phdi | phdi | diff_hdi_phdi | co2_prod | mf | pop_total |
+|:---|:---|:---|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| AFG | Afghanistan | Low | SA | 182 | 1990 | 0.284 | 45.967 | 2.936460 | 0.8719620 | 3115.670 | NA | NA | NA | 48.397 | 2.117230 | 0.2016592 | NA | NA | 43.709 | 4.532768 | 1.493952 | NA | NA | NA | NA | NA | NA | NA | NA | NA | 1377.859 | 142.960 | 1.107733 | 7.899011 | NA | NA | NA | NA | NA | 0.281 | 1.056338 | 0.1892790 | 2.1809 | 10.69480 |
+| AFG | Afghanistan | Low | SA | 182 | 1991 | 0.292 | 46.663 | 3.228456 | 0.9152675 | 2817.305 | NA | NA | NA | 49.144 | 2.246242 | 0.2189443 | NA | NA | 44.353 | 4.768261 | 1.578809 | NA | NA | NA | NA | NA | NA | NA | NA | NA | 1392.786 | 147.525 | 1.221396 | 8.137953 | NA | NA | NA | NA | NA | 0.289 | 1.027397 | 0.1781545 | 2.5264 | 10.74517 |
+| AFG | Afghanistan | Low | SA | 182 | 1992 | 0.299 | 47.596 | 3.520452 | 0.9585729 | 2474.682 | NA | NA | NA | 50.320 | 2.383115 | 0.2362294 | NA | NA | 45.070 | 5.015989 | 1.663665 | NA | NA | NA | NA | NA | NA | NA | NA | NA | 1451.594 | 147.521 | 1.335059 | 8.376896 | NA | NA | NA | NA | NA | 0.296 | 1.003344 | 0.1229200 | 2.6421 | 12.05743 |
+
+For an overview of the variable names, see the following table.
+
+| variable_name | variable_type | description |
+|:---|:---|:---|
+| iso3 | character | ISO3 country code |
+| country | character | Country name |
+| hdicode | character | Human Development Group |
+| region | character | UNDP developing regions |
+| hdi_rank_2022 | numeric | HDI Rank in 2022 |
+| year | character | Year of value |
+| hdi | numeric | Human Development Index |
+| le | numeric | Life Expectancy at Birth (years) |
+| eys | numeric | Expected Years of Schooling (years) |
+| mys | numeric | Mean Years of Schooling (years) |
+| gnipc | numeric | Gross National Income Per Capita (2017 PPP USD) |
+| gdi_group | numeric | GDI Group |
+| gdi | numeric | Gender Development Index (value) |
+| hdi_f | numeric | HDI female |
+| le_f | numeric | Life Expectancy at Birth, female (years) |
+| eys_f | numeric | Expected Years of Schooling, female (years) |
+| mys_f | numeric | Mean Years of Schooling, female (years) |
+| gni_pc_f | numeric | Gross National Income Per Capita, female (2017 PPP USD) |
+| hdi_m | numeric | HDI male |
+| le_m | numeric | Life Expectancy at Birth, male (years) |
+| eys_m | numeric | Expected Years of Schooling, male (years) |
+| mys_m | numeric | Mean Years of Schooling, male (years) |
+| gni_pc_m | numeric | Gross National Income Per Capita, male (2017 PPP USD) |
+| ihdi | numeric | Inequality-adjusted Human Development Index (value) |
+| coef_ineq | numeric | Coefficient of human inequality |
+| loss | numeric | Overall loss (%) |
+| ineq_le | numeric | Inequality in life expectancy |
+| ineq_edu | numeric | Inequality in education |
+| ineq_inc | numeric | Inequality in income |
+| gii_rank | numeric | GII Rank |
+| gii | numeric | Gender Inequality Index (value) |
+| mmr | numeric | Maternal Mortality Ratio (deaths per 100,000 live births) |
+| abr | numeric | Adolescent Birth Rate (births per 1,000 women ages 15-19) |
+| se_f | numeric | Population with at least some secondary education, female (% ages 25 and older) |
+| se_m | numeric | Population with at least some secondary education, male (% ages 25 and older) |
+| pr_f | numeric | Share of seats in parliament, female (% held by women) |
+| pr_m | numeric | Share of seats in parliament, male (% held by men) |
+| lfpr_f | numeric | Labour force participation rate, female (% ages 15 and older) |
+| lfpr_m | numeric | Labour force participation rate, male (% ages 15 and older) |
+| rankdiff_hdi_phdi | numeric | Difference from HDI rank |
+| phdi | numeric | Planetary pressures-adjusted Human Development Index (value) |
+| diff_hdi_phdi | numeric | Difference from HDI value (%) |
+| co2_prod | numeric | Carbon dioxide emissions per capita (production) (tonnes) |
+| mf | numeric | Material footprint per capita (tonnes) |
+| pop_total | numeric | Population, total (millions) |
+
+## Example
+
+Less developed countries exhibit higher adolescent birth rates than more
+developed countries
+
+``` r
+
+library(undpcomposite)
+library(ggplot2)
+library(dplyr)
+
+# Ensure UTF-8 encoding for character columns
+undpcomposite <- undpcomposite |>
+  mutate(across(where(is.character), ~ iconv(.,"UTF-8","UTF-8",sub="")))
+
+# Keep four countries and the years with a value for `abr`
+undpcomposite_clean <- undpcomposite |> 
+  filter(country %in% c("United States", "Germany", "Niger", "Mali")) |> 
+  mutate(
+    year = as.numeric(year)  # Convert year to numeric
+  ) |> 
+  filter(!is.na(abr))  # Drop years without a value for abr
+
+# Find min and max year
+year_range <- range(undpcomposite_clean$year, na.rm = TRUE)
+
+# Create the plot with decade-based x-axis
+ggplot(undpcomposite_clean, aes(x = year, y = abr, color = country, group = country)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(floor(year_range[1] / 10) * 10, ceiling(year_range[2] / 10) * 10, by = 10)) +  
+  labs(
+    title = "Adolescent Birth Rate in Two High Income and Two Low Income Countries",
+    x = "Year",
+    y = "Adolescent Birth Rate (births per 1,000 women aged 15-19)"
+  ) +
+  theme_minimal()
+```
+
+![](reference/figures/README-unnamed-chunk-7-1.png)
+
+## License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/undpcomposite/blob/main/LICENSE.md).
+
+## Citation
+
+Please cite this package using:
+
+``` r
+
+citation("undpcomposite")
+#> To cite package 'undpcomposite' in publications use:
+#> 
+#>   Dubey Y, Schöbitz L (2025). "undpcomposite: UNDP Composite Indicators
+#>   Timeseries." doi:10.5281/zenodo.14845847
+#>   <https://doi.org/10.5281/zenodo.14845847>.
+#>   <https://github.com/openwashdata/undpcomposite>.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Misc{dubey_etall:2025,
+#>     title = {undpcomposite: UNDP Composite Indicators Timeseries},
+#>     author = {Yash Dubey and Lars Schöbitz},
+#>     year = {2025},
+#>     doi = {10.5281/zenodo.14845847},
+#>     url = {https://github.com/openwashdata/undpcomposite},
+#>     abstract = {Provides tidy data on the composite indices of the UNDP Human Development Report 2023/2024 (HDI, GDI, IHDI, GII and PHDI) and their components as a time series from 1990 to 2022 for 195 countries and territories and 11 UNDP aggregates.},
+#>     keywords = {open data,washdata,human development index,gender development index,gender inequality index,inequality,planetary pressures,time series,sdgs},
+#>     version = {1.0.1},
+#>   }
+```
+
+# Package index
+
+## All functions
+
+- [`undpcomposite`](https://openwashdata.github.io/undpcomposite/reference/undpcomposite.md)
+  : undpcomposite: UNDP composite indices for countries and aggregates,
+  1990 to 2022
+
