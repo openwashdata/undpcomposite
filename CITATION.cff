@@ -1,27 +1,43 @@
-# --------------------------------------------
-# CITATION file created with {cffr} R package
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# --------------------------------------------
+# ------------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "undpcomposite" in publications use:'
-type: software
+type: dataset
 license: CC-BY-4.0
 title: 'undpcomposite: UNDP Composite Indicators Timeseries'
-version: 0.1.0
-doi: 10.5281/zenodo.14845848
-abstract: Provides tidy data about all UNDP indicators in a composite timeseries.
+version: 1.0.1
+doi: 10.5281/zenodo.14845847
+abstract: Provides tidy data on the composite indices of the UNDP Human Development
+  Report 2023/2024 (HDI, GDI, IHDI, GII and PHDI) and their components as a time series
+  from 1990 to 2022 for 195 countries and territories and 11 UNDP aggregates.
 authors:
 - family-names: Dubey
   given-names: Yash
   email: ydubey@ethz.ch
   orcid: https://orcid.org/0009-0001-2849-970X
+- family-names: Schöbitz
+  given-names: Lars
+  email: lschoebitz@ethz.ch
+  orcid: https://orcid.org/0000-0003-2196-5015
 repository-code: https://github.com/openwashdata/undpcomposite
 url: https://github.com/openwashdata/undpcomposite
 date-released: '2025-02-10'
 contact:
-- family-names: Dubey
-  given-names: Yash
-  email: ydubey@ethz.ch
-  orcid: https://orcid.org/0009-0001-2849-970X
+- family-names: Schöbitz
+  given-names: Lars
+  email: lschoebitz@ethz.ch
+  orcid: https://orcid.org/0000-0003-2196-5015
+keywords:
+- open data
+- washdata
+- human development index
+- gender development index
+- gender inequality index
+- inequality
+- planetary pressures
+- time series
+- sdgs
 
