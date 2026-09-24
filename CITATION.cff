@@ -8,9 +8,11 @@ message: 'To cite package "undpcomposite" in publications use:'
 type: dataset
 license: CC-BY-4.0
 title: 'undpcomposite: UNDP Composite Indicators Timeseries'
-version: 0.1.0
+version: 1.0.1
 doi: 10.5281/zenodo.14845847
-abstract: Provides tidy data about all UNDP indicators in a composite timeseries.
+abstract: Provides tidy data on the composite indices of the UNDP Human Development
+  Report 2023/2024 (HDI, GDI, IHDI, GII and PHDI) and their components as a time series
+  from 1990 to 2022 for 195 countries and territories and 11 UNDP aggregates.
 authors:
 - family-names: Dubey
   given-names: Yash
