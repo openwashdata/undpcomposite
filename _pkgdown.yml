@@ -1,5 +1,5 @@
 
-url: https://github.com/openwashdata/undpcomposite
+url: https://openwashdata.github.io/undpcomposite/
 template:
   bootstrap: 5
   includes:
