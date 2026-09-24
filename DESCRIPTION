@@ -8,13 +8,12 @@ Authors@R: c(
     person("Lars", "Schöbitz", , "lschoebitz@ethz.ch", role = "cre",
            comment = c(ORCID = "0000-0003-2196-5015"))
   )
-Description: Provides tidy data about all UNDP indicators in a composite timeseries.
+Description: Provides tidy data on the composite indices of the UNDP Human Development Report 2023/2024 (HDI, GDI, IHDI, GII and PHDI) and their components as a time series from 1990 to 2022 for 195 countries and territories and 11 UNDP aggregates.
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 3.5)
-RoxygenNote: 7.3.2
 Language: en-GB
 Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, ggplot2
 Date: 2025-02-10
@@ -23,3 +22,4 @@ BugReports: https://github.com/openwashdata/undpcomposite/issues
 X-schema.org-keywords: open data, washdata, human development index, gender development index, gender inequality index, inequality, planetary pressures, time series, sdgs
 X-schema.org-spatialCoverage: Worldwide
 X-schema.org-temporalCoverage: 1990-01-01/2022-12-31
+Config/roxygen2/version: 8.0.0

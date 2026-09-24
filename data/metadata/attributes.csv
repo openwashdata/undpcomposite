@@ -2,7 +2,7 @@ directory,file_name,variable_name,variable_type,description
 data/,undpcomposite.rda,iso3,character,ISO3 country code
 data/,undpcomposite.rda,country,character,Country name
 data/,undpcomposite.rda,hdicode,character,Human Development Group
-data/,undpcomposite.rda,region,character,UNDP Developin Regions
+data/,undpcomposite.rda,region,character,UNDP developing regions
 data/,undpcomposite.rda,hdi_rank_2022,numeric,HDI Rank in 2022
 data/,undpcomposite.rda,year,character,Year of value
 data/,undpcomposite.rda,hdi,numeric,Human Development Index
@@ -26,7 +26,7 @@ data/,undpcomposite.rda,ihdi,numeric,Inequality-adjusted Human Development Index
 data/,undpcomposite.rda,coef_ineq,numeric,Coefficient of human inequality
 data/,undpcomposite.rda,loss,numeric,Overall loss (%)
 data/,undpcomposite.rda,ineq_le,numeric,Inequality in life expectancy
-data/,undpcomposite.rda,ineq_edu,numeric,Inequality in eduation
+data/,undpcomposite.rda,ineq_edu,numeric,Inequality in education
 data/,undpcomposite.rda,ineq_inc,numeric,Inequality in income
 data/,undpcomposite.rda,gii_rank,numeric,GII Rank
 data/,undpcomposite.rda,gii,numeric,Gender Inequality Index (value)
@@ -39,7 +39,7 @@ data/,undpcomposite.rda,pr_m,numeric,"Share of seats in parliament, male (% held
 data/,undpcomposite.rda,lfpr_f,numeric,"Labour force participation rate, female (% ages 15 and older)"
 data/,undpcomposite.rda,lfpr_m,numeric,"Labour force participation rate, male (% ages 15 and older)"
 data/,undpcomposite.rda,rankdiff_hdi_phdi,numeric,Difference from HDI rank
-data/,undpcomposite.rda,phdi,numeric,Planetary pressures–adjusted Human Development Index (value)
+data/,undpcomposite.rda,phdi,numeric,Planetary pressures-adjusted Human Development Index (value)
 data/,undpcomposite.rda,diff_hdi_phdi,numeric,Difference from HDI value (%)
 data/,undpcomposite.rda,co2_prod,numeric,Carbon dioxide emissions per capita (production) (tonnes)
 data/,undpcomposite.rda,mf,numeric,Material footprint per capita (tonnes)
