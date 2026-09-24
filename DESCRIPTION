@@ -16,7 +16,10 @@ Depends:
     R (>= 3.5)
 RoxygenNote: 7.3.2
 Language: en-GB
-Config/Needs/website: rmarkdown
+Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, ggplot2
 Date: 2025-02-10
 URL: https://github.com/openwashdata/undpcomposite
 BugReports: https://github.com/openwashdata/undpcomposite/issues
+X-schema.org-keywords: open data, washdata, human development index, gender development index, gender inequality index, inequality, planetary pressures, time series, sdgs
+X-schema.org-spatialCoverage: Worldwide
+X-schema.org-temporalCoverage: 1990-01-01/2022-12-31
