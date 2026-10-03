@@ -1,5 +1,15 @@
 # Changelog
 
+## undpcomposite 1.0.2
+
+- Two country names in `undpcomposite` are spelled correctly again:
+  “Côte d’Ivoire” (CIV) and “Türkiye” (TUR) had lost their accented
+  letters (“Cte d’Ivoire”, “Trkiye”). The raw CSV is Latin-1 encoded;
+  `data-raw/data_processing.R` now reads it with that encoding instead
+  of removing the characters it could not convert. The `.rda`, CSV and
+  XLSX exports are rebuilt. No other values change
+  ([\#1](https://github.com/openwashdata/undpcomposite/issues/1)).
+
 ## undpcomposite 1.0.1
 
 - Metadata-only patch after the v1.0.0 Zenodo record, which was cut
