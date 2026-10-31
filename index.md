@@ -1,5 +1,7 @@
 # undpcomposite
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 The goal of undpcomposite is to provide tidy data from the UNDP
 composite data timeseries
 
