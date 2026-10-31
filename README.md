@@ -11,6 +11,8 @@
 [![R-CMD-check](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 The goal of undpcomposite is to provide tidy data from the UNDP
 composite data timeseries
 
