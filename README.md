@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# undpcomposite
+# undpcomposite <a href="https://openwashdata.org"><img src="man/figures/logo.png" align="right" width="120" alt="openwashdata" /></a>
 
 <!-- badges: start -->
 
@@ -10,8 +10,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14845847.svg)](https://zenodo.org/doi/10.5281/zenodo.14845847)
 [![R-CMD-check](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/undpcomposite/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
-
-A data package published by [openwashdata](https://openwashdata.org).
 
 The goal of undpcomposite is to provide tidy data from the UNDP
 composite data timeseries
@@ -1200,6 +1198,8 @@ Data are available as
 [CC-BY](https://github.com/openwashdata/undpcomposite/blob/main/LICENSE.md).
 
 ## Citation
+
+Published by openwashdata, <https://openwashdata.org>.
 
 Please cite this package using:
 
