@@ -1,7 +1,5 @@
 # undpcomposite
 
-A data package published by [openwashdata](https://openwashdata.org).
-
 The goal of undpcomposite is to provide tidy data from the UNDP
 composite data timeseries
 
@@ -165,6 +163,8 @@ Data are available as
 [CC-BY](https://github.com/openwashdata/undpcomposite/blob/main/LICENSE.md).
 
 ## Citation
+
+Published by openwashdata, <https://openwashdata.org>.
 
 Please cite this package using:
 
